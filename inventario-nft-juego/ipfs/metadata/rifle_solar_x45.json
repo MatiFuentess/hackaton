@@ -1,0 +1,23 @@
+{
+    "name": "Solar Rifle X45",
+    "description": "A powerful energy weapon that harnesses solar power",
+    "image": "ipfs://QmYourIPFSHash/rifle_solar_x45.png",
+    "attributes": [
+        {
+            "trait_type": "Weapon Type",
+            "value": "Rifle"
+        },
+        {
+            "trait_type": "Damage",
+            "value": 45
+        },
+        {
+            "trait_type": "Energy Type",
+            "value": "Solar"
+        },
+        {
+            "trait_type": "Rarity",
+            "value": "Rare"
+        }
+    ]
+} 
