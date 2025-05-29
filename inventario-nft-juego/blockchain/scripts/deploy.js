@@ -1,16 +1,11 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const GameItems = await ethers.getContractFactory("GameItems");
+  const gameItems = await GameItems.deploy();
+  await gameItems.deployed();
 
-  console.log("Deploying contracts with the account:", deployer.address);
-
-  const InventoryNFT = await ethers.getContractFactory("InventoryNFT");
-  const inventoryNFT = await InventoryNFT.deploy();
-
-  await inventoryNFT.deployed();
-
-  console.log("InventoryNFT deployed to:", inventoryNFT.address);
+  console.log("GameItems deployed to:", gameItems.address);
 }
 
 main()

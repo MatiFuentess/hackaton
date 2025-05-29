@@ -1,13 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
 
-app = FastAPI(title="Inventory NFT Game API")
+# Crear la aplicación FastAPI
+app = FastAPI(
+    title="Inventory NFT Game API",
+    description="API para el juego de inventario NFT",
+    version="1.0.0"
+)
 
-# Configure CORS
+# Configurar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -15,7 +19,8 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Inventory NFT Game API"}
+    return {"message": "API de Inventario NFT Game funcionando"}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000) 
+@app.get("/test")
+async def test():
+    return {"status": "ok", "message": "Endpoint de prueba funcionando"} 
